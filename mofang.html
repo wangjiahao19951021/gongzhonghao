@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>活动</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <style>
+        body{
+            font-size: 20px;
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        p{
+            line-height: 0;
+        }
+        .html_body{
+            background: white;
+            padding-bottom: 2rem;
+        }
+        .heade_box{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            line-height: 2.2rem;
+        }
+        .heade_box div{
+            width: 50%;
+            text-align: center;
+            color: #0188EB;
+            font-size: 0.65rem;
+            border-bottom: 2px solid #E6E6E6;
+        }
+        .heade_box .active{
+            border-bottom: 2px solid #0188EB;
+            background: #F2F2F2;
+        }
+        .container_box{
+            width: 100%;
+        }
+        .container_box1{
+            width: 100%;
+            padding: 0 3%;
+            color: #000000;
+        }
+        .container_box1_text{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #E6E6E6;
+            font-size: 0.65rem;
+            line-height: 2.4rem;
+        }
+        .container_box1_text input{
+            border: none;
+            text-align: right;
+            position: relative;
+        }
+        .container_box1_text input::placeholder{
+            color: #B2B2B2;
+        }
+        .container_box1_text .colors{
+            color: #E50057;
+            margin-left: 0.3rem;
+        }
+        .container_box1_text svg{
+            margin-bottom: 0.3rem;
+        }
+        button[disabled], html input[disabled]{
+            background: white;
+        }
+        .nums{
+            margin-left: 0.5rem;
+        }
+        .container_box1_texts{
+            font-size: 0.65rem;
+            padding: 0.8rem 0;
+        }
+        .container_box1_texts textarea{
+            display: block;
+            width: 100%;
+            border: none;
+            padding: 0;
+            margin-top: 0.5rem;
+            resize: none;
+        }
+        .container_box1_texts textarea::placeholder{
+            color: #B2B2B2;
+        }
+        .btn{
+            width: 100%;
+            line-height: 2.4rem;
+            border: none;
+            background: #0188EB;
+            color: white;
+            border-radius: 10px;
+        }
+        .container_box>div{
+            display: none;
+        }
+        .container_box>.show{
+            display: block;
+        }
+        .container_box2{
+            text-align: center;
+            font-size: 0.7rem;
+            padding-top: 1rem;
+            color: #B2B2B2;
+        }
+        .mask{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .shanghu_mask{
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 80%;
+            background: white;
+            z-index: 2;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current">
+            <!-- 你的html代码 -->
+            <div class="html_body content">
+                <div class="heade_box">
+                    <div class="header_box_left">申请记录</div>
+                    <div class="header_cccccccccccccbox_right active">提交申请</div>
+                </div> 
+                <div class="container_box">
+                    <div class="container_box1 show">
+                        <div class="container_box1_text">
+                            <span>姓&nbsp;&nbsp;&nbsp;&nbsp;名</span><div><input type="text" placeholder="请输入姓名"></div>
+                        </div>
+                        <div class="container_box1_text">
+                            <span>商户名<span class="colors">*</span></span><div><input type="text" placeholder="请输入商户名"></div>
+                        </div>
+                        <div class="container_box1_text">
+                            <span>商户号<span class="colors">*</span></span><div><input type="text" placeholder="点击选择商户号" disabled>
+                                <svg t="1563352385879" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="866" width="1rem" height="1rem"><path d="M377.018182 898.327273c-9.309091 0-18.618182-2.327273-25.6-9.309091-13.963636-13.963636-13.963636-34.909091 0-48.872727l321.163636-321.163637L351.418182 197.818182c-13.963636-13.963636-13.963636-34.909091 0-48.872727 13.963636-13.963636 34.909091-13.963636 48.872727 0L744.727273 493.381818c13.963636 13.963636 13.963636 34.909091 0 48.872727L400.290909 889.018182c-6.981818 6.981818-16.290909 9.309091-23.272727 9.309091z" fill="#808080" p-id="867"></path></svg></div>
+                        </div>
+                        <div class="container_box1_text">
+                            <span>手&nbsp;&nbsp;&nbsp;&nbsp;机<span class="colors">*</span></span><input type="text" disabled value="17310208735">
+                        </div>
+                        <div class="container_box1_text">
+                            <span>地&nbsp;&nbsp;&nbsp;&nbsp;址<span class="colors">*</span></span><div><input type="text" placeholder="选择地址" disabled>
+                                <svg t="1563352385879" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="866" width="1rem" height="1rem"><path d="M377.018182 898.327273c-9.309091 0-18.618182-2.327273-25.6-9.309091-13.963636-13.963636-13.963636-34.909091 0-48.872727l321.163636-321.163637L351.418182 197.818182c-13.963636-13.963636-13.963636-34.909091 0-48.872727 13.963636-13.963636 34.909091-13.963636 48.872727 0L744.727273 493.381818c13.963636 13.963636 13.963636 34.909091 0 48.872727L400.290909 889.018182c-6.981818 6.981818-16.290909 9.309091-23.272727 9.309091z" fill="#808080" p-id="867"></path></svg></div>
+                        </div>
+                        <div class="container_box1_text">
+                            <span>请选择耗材类型<span class="colors">*</span></span><div><input type="text" disabled value="流量卡">
+                                <svg t="1563352385879" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="866" width="1rem" height="1rem"><path d="M377.018182 898.327273c-9.309091 0-18.618182-2.327273-25.6-9.309091-13.963636-13.963636-13.963636-34.909091 0-48.872727l321.163636-321.163637L351.418182 197.818182c-13.963636-13.963636-13.963636-34.909091 0-48.872727 13.963636-13.963636 34.909091-13.963636 48.872727 0L744.727273 493.381818c13.963636 13.963636 13.963636 34.909091 0 48.872727L400.290909 889.018182c-6.981818 6.981818-16.290909 9.309091-23.272727 9.309091z" fill="#808080" p-id="867"></path></svg></div>
+                        </div>
+                        <div class="container_box1_text">
+                            <span>所需数量<span class="colors">*</span></span><div><input type="number" placeholder="请输入"><span class="nums">卷/张</span></div>
+                        </div>
+                        <div class="container_box1_texts">
+                            <span>备&nbsp;&nbsp;&nbsp;&nbsp;注</span>
+                            <textarea name="" id="" rows="5" placeholder="请输入"></textarea>
+                        </div>
+                        <button class="btn">
+                            提交
+                        </button>
+                    </div>
+                    <div class="container_box2">
+                        没有更多了
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 商户号弹窗 -->
+            <div class="shanghu_mask">
+                
+            </div>
+            <div class="mask"></div>
+        </div>
+    </div>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <!-- <script src="http://m.12365auto.com/js/jquery-1.7.2.min.js"></script> -->
+    <script>
+        $.init();
+        // 返回上一页
+        $(".heade_box div").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            console.log($(this).index())
+            if ($(this).index() == 0) {
+                $(".container_box>div").eq(1).addClass("show").siblings().removeClass("show")
+            } else if ($(this).index() == 1) {
+                $(".container_box>div").eq(0).addClass("show").siblings().removeClass("show")
+            }
+        })
+
+        // 弹窗
+        
+    </script> 
+  </body>
+</html>
