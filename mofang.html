@@ -121,7 +121,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1;
         }
         .shanghu_mask{
@@ -133,6 +133,22 @@
             height: 80%;
             background: white;
             z-index: 2;
+        }
+        .guanbi_shanghu{
+            position: absolute;
+            top: -0.5rem;
+            right: -0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: white;
+            z-index: 3;
+            border-radius: 50%;
+        }
+        .guanbi_shanghu svg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
   </head>
@@ -154,7 +170,7 @@
                             <span>商户名<span class="colors">*</span></span><div><input type="text" placeholder="请输入商户名"></div>
                         </div>
                         <div class="container_box1_text">
-                            <span>商户号<span class="colors">*</span></span><div><input type="text" placeholder="点击选择商户号" disabled>
+                            <span>商户号<span class="colors">*</span></span><div class="select_shanghu"><input type="text" placeholder="点击选择商户号" disabled>
                                 <svg t="1563352385879" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="866" width="1rem" height="1rem"><path d="M377.018182 898.327273c-9.309091 0-18.618182-2.327273-25.6-9.309091-13.963636-13.963636-13.963636-34.909091 0-48.872727l321.163636-321.163637L351.418182 197.818182c-13.963636-13.963636-13.963636-34.909091 0-48.872727 13.963636-13.963636 34.909091-13.963636 48.872727 0L744.727273 493.381818c13.963636 13.963636 13.963636 34.909091 0 48.872727L400.290909 889.018182c-6.981818 6.981818-16.290909 9.309091-23.272727 9.309091z" fill="#808080" p-id="867"></path></svg></div>
                         </div>
                         <div class="container_box1_text">
@@ -188,7 +204,9 @@
 
             <!-- 商户号弹窗 -->
             <div class="shanghu_mask">
-                
+                <div class="guanbi_shanghu">
+                    <svg t="1563359837342" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4752" width="0.8rem" height="0.8rem"><path d="M512.001 15.678C237.414 15.678 14.82 238.273 14.82 512.86S237.414 1010.04 512 1010.04s497.18-222.593 497.18-497.18S786.589 15.678 512.002 15.678z m213.211 645.937c17.798 17.803 17.798 46.657 0 64.456-17.798 17.797-46.658 17.797-64.456 0L512.001 577.315 363.241 726.07c-17.799 17.797-46.652 17.797-64.45 0-17.804-17.799-17.804-46.653 0-64.456L447.545 512.86 298.79 364.104c-17.803-17.798-17.803-46.657 0-64.455 17.799-17.798 46.652-17.798 64.45 0l148.761 148.755 148.755-148.755c17.798-17.798 46.658-17.798 64.456 0 17.798 17.798 17.798 46.657 0 64.455L576.456 512.86l148.756 148.755z m0 0" p-id="4753" fill="#515151"></path></svg>
+                </div>
             </div>
             <div class="mask"></div>
         </div>
@@ -210,7 +228,15 @@
         })
 
         // 弹窗
-        
+        $(".guanbi_shanghu").click(function () {
+            $(this).parent().hide();
+            $(".mask").hide();
+        })
+        // 点击选择商户
+        $(".select_shanghu").click(function () {
+            $(".mask").show();
+            $(".shanghu_mask").show();
+        })
     </script> 
   </body>
 </html>
